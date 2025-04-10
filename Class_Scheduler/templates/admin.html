@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Test Phyton Script</title>
+        <link rel="stylesheet" href="/static/admin.css">
+    </head>
+    <body>
+        <nav>
+            <a href="/home">Home</a>
+        </nav>
+        <h1>Welcome to the home page!</h1>
+        <form method="POST" action="/admin">
+            Enter term: <input type="text" name="userInput" required="true">
+            <br>
+            <button type="submit" name="test_script">Run Script</button>
+        </form>
+
+        <div class="output">
+            <h2>Output:</h2>
+            <pre>{{ output }}</pre>
+
+            {% if userInput %}
+                <h3>You submitted: {{ userInput }}</h3>
+            {% endif %}
+        </div>
+        <p>After the page loads please press next</p>
+        <a href="/test">Next</a>
+    </body>
+</html>
