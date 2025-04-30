@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>Create User</title>
+        <link href="../static/create.css" type="text/css" rel="stylesheet">
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="/homeLogin">Back</a></li>
+            </ul>
+        </nav>
+        <br>
+        <div class="container">
+            <h1>Create User</h1>
+            <form method="POST">
+                Username: <input type="text" id="username" name="username" required="true"><br>
+                Password: <input type="password" id="password" name="password" required="true"><br>
+                <label>Building</label>
+                <select id="userType" name="userType">
+                    <option value="taylor">Taylor</option>
+                    <option value="borick">Borick</option>
+                    <option value="quigley">Quigley</option>
+                    <option value="hurst">Hurst</option>
+                    <option value="kelley">Kelley</option>
+                    <option value="rady">Rady</option>
+                    <option value="crawford">Crawford</option>
+                    <option value="gym">Gym</option>
+                </select>
+                <button type="submit">Create</button>
+            </form>
+        </div>
+    </body>
+</html>

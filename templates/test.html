@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>Confirmation</title>
+        <link rel="stylesheet" href="/static/confirm.css">
+    </head>
+    <body>
+        <nav>
+            <a href="/homeLogin">Home</a>
+        </nav>
+        <div class="container">
+            <div class="holder">
+                <h1>Calendar has been updated!</h1>
+                <img src="../static/successEmail.png" height="300px" width="300px"
+            </div>
+        </div>
+
+        <!-- 
+        <table border="1">
+            <thead>
+                <tr>
+                    {% if new_data %}
+                        {% for column in new_data[0].keys() %}
+                            <th>{{ column }}</th>
+                        {% endfor %}
+                    {% endif %}
+                </tr>
+            </thead>
+            <tbody>
+                {% if new_data %}
+                    {% for row in new_data %}
+                        <tr>
+                            {% for key, value in row.items() %}
+                                <td>{{ value }}</td>
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                {% else %}
+                    <tr><td colspan="9">No data available</td></tr>
+                {% endif %}
+            </tbody>
+        </table>
+        -->
+    </body>
+</html>

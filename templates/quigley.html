@@ -1,0 +1,114 @@
+<html>
+    <head>
+        <title>Quigley Hall</title>
+        <link href="../static/quigley.css" type="text/css" rel="stylesheet">
+        <script src="../static/calendar_quigley.js"></script>
+    </head>
+    <body>
+        <script src="../static/switch.js"></script>
+        <div class="navbar">
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/gym">Paul Wright Gym</a></li>
+                    <li><a href="/crawford">Crawford</a></li>
+                    <li><a href="/borick">Borick</a></li>
+                    <li><a href="/hurst">Hurst</a></li>
+                    <li><a href="/taylor">Taylor</a></li>
+                    <li><a href="/rady">Rady</a></li>
+                    <li><a href="/quigley">Quigley</a></li>
+                    <li><a href="/kelly">Kelley</a></li>
+                </ul>
+            </nav>
+        </div>
+        <br>
+        <br>
+        <h1 id="title">Quigley</h1>
+        <br>
+        <div class="container">
+            <div class="sidebar"> 
+                <div class="tabs">
+                    <button onclick="showTab('classes')" id="classesTab" class="active">Classes</button>
+                    <button onclick="showTab('events')" id="eventsTab">Events</button>
+                </div>
+
+                <div id="classesSection">
+                    <h2 id="selectedDayTitle">Classes on this day:</h2>
+                    <div id="eventList" class="entries">
+                        <p>Select a day to view its classes</p>
+                    </div>
+                </div>
+
+                <div id="eventsSection" style="display: none;">
+                    <h2>Events:</h2>
+                    <table id="eventsTable">
+                        <thead>
+                            <tr>
+                                <th>Event Name</th>
+                                <th>Start Date</th>
+                                <th>End Date</th>
+                                <th>Start Time</th>
+                                <th>End Time</th>
+                                <th>Location</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% if events %}
+                                {% for event in events %}
+                                    <tr>
+                                        <td>{{ event['EventName'] }}</td> 
+                                        <td>{{ event['StartDate'] }}</td>
+                                        <td>{{ event['EndDate'] }}</td>
+                                        <td>{{ event['StartTime'] }}</td>
+                                        <td>{{ event['EndTime'] }}</td>
+                                        <td>{{ event['Location'] }}</td>
+                                    </tr>
+                                {% endfor %}
+                            {% else %}
+                                <tr>
+                                    <td colspan="6">No events available.</td>
+                                </tr>
+                            {% endif %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="holder">
+                <div class="calendar">
+                    <header>
+                        <div id="yearControls" class="controls">
+                            <button id="prevYear"><</button>
+                            <div id="currentYear"></div>
+                            <button id="nextYear">></button>
+                        </div>
+            
+                        <div id="monthControls" class="controls">
+                            <button id="prevMonth"><</button>
+                            <div id="currentMonth"></div>
+                            <button id="nextMonth">></button>
+                        </div>
+                    </header>
+        
+                    <div class="days_of_week">
+                        <span>Sun</span>
+                        <span>Mon</span>
+                        <span>Tue</span>
+                        <span>Wed</span>
+                        <span>Thu</span>
+                        <span>Fri</span>
+                        <span>Sat</span>
+                    </div>
+                    <div id="calendarGrid" class="calendar-grid"></div>
+                    <br>
+                    <div id="request">
+                        <h1>Request a room</h1>
+                        <a href="/requestQuigley">BOOK A ROOM</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

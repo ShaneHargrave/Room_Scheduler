@@ -1,0 +1,232 @@
+body{
+    overflow: scroll;
+    background-image: url("../static/rady.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0px;
+    padding: 0px;
+    min-width: 1000px;
+}
+
+#title{
+    color:white;
+    text-align: center;
+    background-color: black;
+    border: 10px solid red;
+}
+
+.navbar{
+    position: fixed;
+    width: 100%;
+    background-color: black;
+    min-width: 1000px;
+}
+
+.navbar nav ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar nav ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    margin: 15px;
+}
+
+.navbar nav ul li a:hover{
+    color: red;
+}
+.entries {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    align-items: flex-start;     
+    padding-left: 20px;          
+    margin-bottom: 10px;         
+}
+
+.entries > div {  
+    margin-left: 20px;
+}
+
+.holder{
+    display: flex;
+    min-width: 900px;
+    max-width: 900px;
+    min-height: 800px;
+    max-height: 800px;
+    flex-direction: column;
+}
+
+.container{
+    display: inline-block;
+    vertical-align: top;
+}
+
+.calendar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+button {
+    padding: 5px 10px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+#currentYear, #currentMonth {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#currentYear {
+    font-size: 24px;
+}
+
+#currentMonth {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 80px);
+    gap: 5px;
+    text-align: center;
+}
+
+.days_of_week {
+    display: grid;
+    grid-template-columns: repeat(7, 80px);
+    text-align: center;
+    font-weight: bold;
+}
+
+.calendar-grid div {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.calendar-grid div.disabled {
+    background-color: white;
+}
+
+.calendar-grid div.active {
+    background-color: white;
+    color: black;
+}
+
+.event {
+    color: red;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#yearControls{
+    background-color: red;
+    width: 590px;
+    justify-content: center;
+}
+
+#monthControls{
+    background-color: red;
+    width: 590px;
+    justify-content: center;
+}
+
+#calendarGrid{
+    background-color: lightgray;
+}
+
+.days_of_week{
+    background-color: lightgray;
+    width: 590px;
+}
+
+.sidebar{
+    border: 5px solid black;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    min-width: 500px;
+    max-width: 500px;
+    min-height: 800px;
+    max-height: 800px;
+    overflow: scroll;
+    background-color: white;
+}
+
+#request{
+    background-color: white;
+    color: black;
+    border: 5px solid black;
+    border-radius: 8px;
+    text-align: center;
+    min-width: 590px
+}
+
+#eventsSection {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+#eventsTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#eventsTable thead {
+    background-color: #3498db;
+    color: white;
+    font-weight: bold;
+}
+
+#eventsTable th, #eventsTable td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+    font-size: 14px;
+}
+
+#eventsTable tbody tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+#eventsTable td[colspan="6"] {
+    text-align: center;
+    font-style: italic;
+    color: #7f8c8d;
+    padding: 20px 0;
+}

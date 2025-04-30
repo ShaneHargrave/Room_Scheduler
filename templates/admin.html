@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>Calendar Re-Sync</title>
+        <link rel="stylesheet" href="/static/admin.css">
+    </head>
+    <body>
+        <nav>
+            <a href="/homeLogin">Back</a>
+        </nav>
+        <br>
+        <div class="contain">
+            <div class="holder">
+                <h1>Calendar Re-Sync</h1>
+    
+                <form method="POST" action="/admin">
+                    <select name="term" id="terms_list" required>
+                        <option disabled selected value="">Select Term</option>
+                        {% for term in terms %}
+                        <option value="{{ term }}">{{ term }}</option>
+                        {% endfor %}
+                    </select>
+                    <br>
+                    <br>
+                    <button type="submit" name="test_script">Submit</button>
+                </form>
+    
+                <div class="output">
+                    <h2>Progress:</h2>
+                    <pre>{{ output }}</pre>
+                </div>
+                <p>Press next only after you see a meassage saying the calendar has been updated!</p>
+                <a href="/test">Next</a>
+            </div>
+        </div>
+    </body>
+</html>

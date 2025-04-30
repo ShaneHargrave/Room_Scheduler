@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Home Page</title>
+        <link href="../static/loginHome.css" type="text/css" rel="stylesheet">
+    </head>
+    <body>
+        <nav>
+            <a href="/homeLogin">Home</a>
+            <a href="/logout">Logout</a>
+            {% if user_id == 1 %}
+                <a href="/create">Create User</a>
+                <a href="/update">Update User</a>
+            {% endif %}
+        </nav>
+        <br>
+        <h1>Welcome, {{ username }}!</h1>
+        <p>This is your dashboard</p>
+        <div id="container">
+            <div id="roomRequest">
+                <h2>View Room Requests</h2>
+                <a href="/roomRequest">Room Requests</a>
+                <img src="../static/roomRequest.jpg" alt="Image for room request">
+            </div>
+            <div id="scrape">
+                <h2>Re-sync the calendar</h2>
+                <a href="/admin">Scrape</a>
+                <img src="../static/calendar_picture.jpg" alt="Image for updating calendar">
+            </div>
+        </div>
+    </body>
+</html>

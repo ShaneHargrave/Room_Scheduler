@@ -1,0 +1,57 @@
+<html>
+<head>
+    <title>Room Request</title>
+    <script src="../static/borick_request.js"></script>
+    <link href="../static/request.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <a href="/">Back</a>
+    </nav>
+    <main>
+        <div class="request-wrapper">
+            <h1>Request Room for Borick</h1>
+            <form method="POST" action="/requestBorick">
+                <input type="hidden" name="formAction" id="formAction" value="">
+                <div class="input-field">
+                    <input placeholder="Your Name" name="requestName" type="text" required value="{{ previous.requestName if previous is defined else '' }}">
+                </div>
+                <br>
+                <div class="input-field">
+                    <input placeholder="Event Name" name="eventName" type="text" required value="{{ previous.eventName if previous is defined else '' }}">
+                </div>
+                <div class="input-field">
+                    <input placeholder="Email" name="emailUser" type="email"  required value="{{ previous.emailUser if previous is defined else '' }}">
+                </div>
+                <div class="flex">
+                    <p>Start Date:</p> <input name="startDate" type="date" required value="{{ previous.startDate if previous is defined else '' }}">
+                    <p>End Date:</p> <input name="endDate" type="date" required value="{{ previous.endDate if previous is defined else '' }}">
+                </div>
+                <div class="flex">
+                    <p>Start Time:</p> <input name="startTime" id="startTime" type="time" required value="{{ previous.startTime if previous is defined else '' }}">
+                    <p>End Time:</p> <input name="endTime" id="endTime" type="time" required value="{{ previous.endTime if previous is defined else '' }}">
+                </div>
+                <br>
+    
+                {% if form_checked and possible_rooms %}
+                    <h1>Available Rooms</h1>
+                    <label for="eventLocation">Select Event Location:</label>
+                    <select name="eventLocation" id="eventLocation">
+                        {% for room in possible_rooms %}
+                            <option value="{{ room }}" {% if previous is defined and previous.eventLocation == room %}selected{% endif %}>{{ room }}</option>
+                        {% endfor %}
+                    </select>
+                    <br>
+                    <br>
+                    <button type="submit" id="submitBtn" onclick="document.getElementById('formAction').value='submit_event'">Submit Event</button>
+                {% elif form_checked and not possible_rooms %}
+                    <p style="color:red;">No rooms available for the selected time.</p>
+                {% endif %}
+    
+                <br>
+                <button type="submit" onclick="document.getElementById('formAction').value='get_rooms'">Get Available Rooms</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

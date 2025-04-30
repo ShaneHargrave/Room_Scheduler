@@ -1,0 +1,38 @@
+body{
+    background-color: rgb(230, 229, 228);
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 2;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin-right: 10px;
+}
+
+nav a:hover{
+    color: red;
+}
+
+.holder{
+    font-family: Tahoma;
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px
+}
+
+.contain{
+    padding-top: 40px;
+}

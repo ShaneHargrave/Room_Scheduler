@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>Login</title>
+        <link href="../static/login.css" type="text/css" rel="stylesheet">
+        //CSS: https://www.youtube.com/watch?v=cn3BbO8z8Fk
+    </head>
+    <body>
+        <nav>
+            <a href="/">Home</a>
+        </nav>
+        <main>
+            <div class="login-wrapper">
+                <form method="POST">
+                    <h2>Login</h2>
+                    <div class="input-field">
+                        <input type="text" id="username" name="username" required placeholder="Username">
+                    </div>
+                    <div class="input-field">
+                        <input type="password" id="password" name="password" required placeholder="Password">
+                    </div>
+                    <button type="submit">Login</button>
+                </form>
+                <br>
+                <br>
+                {% if error %}
+                    <p style="color: white;">{{ error }}</p>
+                {% endif %}
+
+            </div>
+        </main>
+    </body>
+</html>

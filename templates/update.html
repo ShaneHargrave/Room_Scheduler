@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Update User</title>
+        <link href="../static/update.css" type="text/css" rel="stylesheet">
+    </head>
+    <body>
+        <nav>
+            <li><a href="/homeLogin">Back</a></li>
+        </nav>
+        <br>
+        <div class="container">
+            <h1>Update User Information</h1>
+            <h2>Users:</h2>
+            <div>
+                {% if userData %}
+                <table border="1">
+                    <tr>
+                        <th>Username</th>
+                        <th>Update</th>
+                        <th>Remove</th>
+                    </tr>
+                {% for e in userData %}
+                    <tr>
+                        <td>{{ e.username }}</td>
+                        <td>
+                            <form method="POST" action="/updateUser">
+                                <input type="hidden" name="username" value="{{ e.username }}">
+                                <button type="submit" name="action" value="update">Update</button>
+                            </form>
+                        </td>
+
+                        <td>
+                            <form method="POST" action="/removeUser">
+                                <input type="hidden" name="username" value="{{ e.username }}">
+                                <button type="submit" name="action" value="remove">Remove</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </table>
+                {% endif %}
+            </div>
+        </div>
+    </body>
+</html>

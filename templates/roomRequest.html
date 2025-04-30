@@ -1,0 +1,123 @@
+<html>
+    <head>
+        <title>Room Requests</title>
+        <link href="../static/roomRequest.css" type="text/css" rel="stylesheet">
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="/homeLogin">Back</a></li>
+            </ul>
+        </nav>
+        <br>
+        <div class="container">
+            <h1>Incoming Room Requests</h1>
+            <div>
+                {% if TMPevents %}
+                <table border="1">
+                    <tr>
+                        <th>Name</th>
+                        <th>Event</th>
+                        <th>Email</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                        <th>Start Time</th>
+                        <th>End Time</th>
+                        <th>Location</th>
+                        <th>ACCEPT</th>
+                        <th>DENY</th>
+                    </tr>
+                {% for e in TMPevents %}
+                    <tr>
+                        <td>{{ e.Name }}</td>
+                        <td>{{ e.EventName }}</td>
+                        <td>{{ e.Email }}</td>
+                        <td>{{ e.StartDate }}</td>
+                        <td>{{ e.EndDate }}</td>
+                        <td>{{ e.StartTime }}</td>
+                        <td>{{ e.EndTime }}</td>
+                        <td>{{ e.Location }}</td>
+
+                        <td>
+                            <form method="POST" action="/handle_request">
+                                <input type="hidden" name="Name" value="{{ e.Name }}">
+                                <input type="hidden" name="EventName" value="{{ e.EventName }}">
+                                <input type="hidden" name="Email" value="{{ e.Email }}">
+                                <input type="hidden" name="StartDate" value="{{ e.StartDate }}">
+                                <input type="hidden" name="EndDate" value="{{ e.EndDate }}">
+                                <input type="hidden" name="StartTime" value="{{ e.StartTime }}">
+                                <input type="hidden" name="EndTime" value="{{ e.EndTime }}">
+                                <input type="hidden" name="Location" value="{{ e.Location }}">
+                                <input type="hidden" name="RoomNumber" value="{{ e.RoomNumber }}">
+                                <button type="submit" name="action" value="accept">Accept</button>
+                            </form>
+                        </td>
+
+                        <td>
+                            <form method="POST" action="/handle_request">
+                                <input type="hidden" name="Name" value="{{ e.Name }}">
+                                <input type="hidden" name="EventName" value="{{ e.EventName }}">
+                                <input type="hidden" name="Email" value="{{ e.Email }}">
+                                <input type="hidden" name="StartDate" value="{{ e.StartDate }}">
+                                <input type="hidden" name="EndDate" value="{{ e.EndDate }}">
+                                <input type="hidden" name="StartTime" value="{{ e.StartTime }}">
+                                <input type="hidden" name="EndTime" value="{{ e.EndTime }}">
+                                <input type="hidden" name="Location" value="{{ e.Location }}">
+                                <input type="hidden" name="RoomNumber" value="{{ e.RoomNumber }}">
+                                <button type="submit" name="action" value="deny">Deny</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </table>
+                {% endif %}
+            </div>
+
+            <h1>Current Events</h1>
+            <div>
+                {% if events %}
+                <table border="1">
+                    <tr>
+                        <th>Name</th>
+                        <th>Event</th>
+                        <th>Email</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                        <th>Start Time</th>
+                        <th>End Time</th>
+                        <th>Location</th>
+                        <th>REMOVE</th>
+                    </tr>
+                {% for e in events %}
+                    <tr>
+                        <td>{{ e.Name }}</td>
+                        <td>{{ e.EventName }}</td>
+                        <td>{{ e.Email }}</td>
+                        <td>{{ e.StartDate }}</td>
+                        <td>{{ e.EndDate }}</td>
+                        <td>{{ e.StartTime }}</td>
+                        <td>{{ e.EndTime }}</td>
+                        <td>{{ e.Location }}</td>
+
+                        <td>
+                            <form method="POST" action="/handle_request">
+                                <input type="hidden" name="Name" value="{{ e.Name }}">
+                                <input type="hidden" name="EventName" value="{{ e.EventName }}">
+                                <input type="hidden" name="Email" value="{{ e.Email }}">
+                                <input type="hidden" name="StartDate" value="{{ e.StartDate }}">
+                                <input type="hidden" name="EndDate" value="{{ e.EndDate }}">
+                                <input type="hidden" name="StartTime" value="{{ e.StartTime }}">
+                                <input type="hidden" name="EndTime" value="{{ e.EndTime }}">
+                                <input type="hidden" name="Location" value="{{ e.Location }}">
+                                <input type="hidden" name="RoomNumber" value="{{ e.RoomNumber }}">
+                                <button type="submit" name="action" value="remove">REMOVE</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </table>
+                {% endif %}
+            </div>
+        </div>
+    </body>
+</html>

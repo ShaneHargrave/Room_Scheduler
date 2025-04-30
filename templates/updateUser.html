@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>Update User</title>
+        <link href="../static/update.css" type="text/css" rel="stylesheet">
+    </head>
+    <body>
+        <br>
+        <div class="container">
+            <h1>Add new user information</h1>
+            <form method="POST" action="/handle_update">
+                <input type="hidden" name="old_username" value="{{ username }}">
+                Username: <input name="username" type="text">
+                Password: <input name="password" type="password">
+                <label>Building</label>
+                <select id="userType" name="userType">
+                    <option value="taylor">Taylor</option>
+                    <option value="borick">Borick</option>
+                    <option value="quigley">Quigley</option>
+                    <option value="hurst">Hurst</option>
+                    <option value="kelley">Kelley</option>
+                    <option value="rady">Rady</option>
+                    <option value="crawford">Crawford</option>
+                    <option value="gym">Gym</option>
+                </select>
+                <button type="submit">Update</button>
+            </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,55 @@
+body{
+    background-color: rgb(230, 229, 228);
+}
+
+#container{
+    display: flex;
+    gap: 20px;
+}
+
+h1{
+    font-family: Tahoma;
+}
+
+#roomRequest, #scrape {
+    flex: 1;
+    padding: 20px;
+    background-color: white;
+    display: inline-block;
+    border-radius: 8px;
+    font-family: Tahoma;
+}
+
+img{
+    height: 200px;
+    width: 200px;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 2;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin-right: 10px;
+}
+
+nav a:hover{
+    color: red;
+}
+
+p{
+    font-size: 20px;
+    font-family: Tahoma;
+}
