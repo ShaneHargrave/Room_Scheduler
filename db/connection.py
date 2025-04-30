@@ -5,10 +5,10 @@ bcrypt = Bcrypt()
 #CONNECTION TO RADY SERVER
 def connection():
     mydb = mysql.connector.connect(
-        host = "radyweb.wsc.western.edu",
-        user = "shargrave",
-        password = "we$terncl@sses",
-        database = "westernclasses"
+        host = "HOSTNAME",
+        user = "USERNAME",
+        password = "PASSWORD",
+        database = "DATABASE NAME"
     )
     return mydb
 
